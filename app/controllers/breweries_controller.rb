@@ -3,6 +3,7 @@ class BreweriesController < ApplicationController
 
   # GET /breweries
   # GET /breweries.json
+
   def index
     @breweries = Brewery.all
   end
