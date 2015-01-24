@@ -1,6 +1,6 @@
 class Beer < ActiveRecord::Base
   #toimiiko git?
-  include AverageRating
+  include ::AverageRating
   belongs_to :brewery
   has_many :ratings, dependent: :destroy
 
