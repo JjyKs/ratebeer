@@ -14030,3 +14030,86 @@ Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:48:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBeer Load (0.0ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRating Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "ratings"  WHERE "ratings"."beer_id" = ? LIMIT 1[0m  [["beer_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT("ratings"."score") FROM "ratings"  WHERE "ratings"."beer_id" = ?  [["beer_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT AVG("ratings"."score") AS avg_id FROM "ratings"  WHERE "ratings"."beer_id" = ?[0m  [["beer_id", 1]]
+  Rendered beers/show.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 164ms (Views: 138.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:48:18 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBeer Load (0.0ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRating Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "ratings"  WHERE "ratings"."beer_id" = ? LIMIT 1[0m  [["beer_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT("ratings"."score") FROM "ratings"  WHERE "ratings"."beer_id" = ?  [["beer_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT AVG("ratings"."score") AS avg_id FROM "ratings"  WHERE "ratings"."beer_id" = ?[0m  [["beer_id", 1]]
+  Rendered beers/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-24 21:48:19 +0200
