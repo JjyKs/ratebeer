@@ -13819,3 +13819,214 @@ Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-01-24 21:13:59 +0200
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-24 21:13:59 +0200
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:37:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 15ms
+
+NameError (undefined local variable or method `averagerating' for #<Class:0x63c66f0>):
+  app/models/beer.rb:3:in `<class:Beer>'
+  app/models/beer.rb:1:in `<top (required)>'
+  app/controllers/beers_controller.rb:74:in `set_beer'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (40.0ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:37:13 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+NameError (undefined local variable or method `averagerating' for #<Class:0x907dd60>):
+  app/models/beer.rb:3:in `<class:Beer>'
+  app/models/beer.rb:1:in `<top (required)>'
+  app/controllers/beers_controller.rb:74:in `set_beer'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (39.0ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:39:27 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+LoadError (Unable to autoload constant AverageRating, expected C:/Sites/ratebeer/lib/average_rating.rb to define it):
+  app/models/beer.rb:3:in `<class:Beer>'
+  app/models/beer.rb:1:in `<top (required)>'
+  app/controllers/beers_controller.rb:74:in `set_beer'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (35.0ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:39:28 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+RuntimeError (Circular dependency detected while autoloading constant AverageRating):
+  app/models/beer.rb:3:in `<class:Beer>'
+  app/models/beer.rb:1:in `<top (required)>'
+  app/controllers/beers_controller.rb:74:in `set_beer'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (35.0ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:39:31 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+RuntimeError (Circular dependency detected while autoloading constant AverageRating):
+  app/models/beer.rb:3:in `<class:Beer>'
+  app/models/beer.rb:1:in `<top (required)>'
+  app/controllers/beers_controller.rb:74:in `set_beer'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (35.0ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:39:31 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+RuntimeError (Circular dependency detected while autoloading constant AverageRating):
+  app/models/beer.rb:3:in `<class:Beer>'
+  app/models/beer.rb:1:in `<top (required)>'
+  app/controllers/beers_controller.rb:74:in `set_beer'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (36.0ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:40:00 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 13ms
+
+LoadError (Unable to autoload constant AverageRating, expected C:/Sites/ratebeer/lib/average_rating.rb to define it):
+  app/models/beer.rb:3:in `<class:Beer>'
+  app/models/beer.rb:1:in `<top (required)>'
+  app/controllers/beers_controller.rb:74:in `set_beer'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (37.0ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBeer Load (0.0ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRating Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "ratings"  WHERE "ratings"."beer_id" = ? LIMIT 1[0m  [["beer_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT("ratings"."score") FROM "ratings"  WHERE "ratings"."beer_id" = ?  [["beer_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT AVG("ratings"."score") AS avg_id FROM "ratings"  WHERE "ratings"."beer_id" = ?[0m  [["beer_id", 1]]
+  Rendered beers/show.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 158ms (Views: 132.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:35 +0200
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBeer Load (0.0ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRating Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "ratings"  WHERE "ratings"."beer_id" = ? LIMIT 1[0m  [["beer_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT("ratings"."score") FROM "ratings"  WHERE "ratings"."beer_id" = ?  [["beer_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT AVG("ratings"."score") AS avg_id FROM "ratings"  WHERE "ratings"."beer_id" = ?[0m  [["beer_id", 1]]
+  Rendered beers/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-24 21:40:36 +0200
