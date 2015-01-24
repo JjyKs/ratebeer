@@ -13,6 +13,12 @@ group :production do
    gem 'pg'
    gem 'rails_12factor'
 end
+
+group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+end
+
 ruby '2.1.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
