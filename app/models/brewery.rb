@@ -3,6 +3,20 @@ class Brewery < ActiveRecord::Base
   has_many :beers, dependent: :destroy
   has_many :ratings, through: :beers
 
+
+
+  validates :year, numericality: { greater_than_or_equal_to: 1024,
+                                    only_integer: true }
+  validate :year_must_be_lower_than_current_year
+
+
+  def year_must_be_lower_than_current_year
+    if year.present? && year > Time.now.year
+      errors.add(:year, "can't be higher than " + Time.now.year.to_s )
+    end
+  end
+
+
   def print_report
     puts name
     puts "established at year #{year}"

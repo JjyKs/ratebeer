@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+
+  <%= @user.username %>
+  <%= @user.average_rating %>
+
+
+<h1>Your ratings</h1>
+<table>
+  <% @user.ratings.each do |reittaus| %>
+      <tr>
+        <td><%= reittaus.to_s %></td>
+        <% if @user == current_user %>
+            <td><%= link_to 'Destroy', reittaus, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>
+
+<h1>Your clubs</h1>
+<table>
+  <% @user.beerclubs.each do |klubi| %>
+      <tr>
+        <td><%= klubi.to_s %></td>
+      </tr>
+  <% end %>
+</table>
+
+
+</p>
+
+<% if current_user == @user %>
+    <%= link_to 'Remove your account', @user, method: :delete, data: {confirm: 'Are you sure?'} %>
+    <%= link_to 'Edit your account', edit_user_path(@user) %> |
+<% end %>
+<%= link_to 'Back', users_path %>
