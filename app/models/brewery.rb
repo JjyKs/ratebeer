@@ -4,7 +4,7 @@ class Brewery < ActiveRecord::Base
   has_many :ratings, through: :beers
 
 
-
+  validates :name, length: {minimum: 1}
   validates :year, numericality: { greater_than_or_equal_to: 1024,
                                     only_integer: true }
   validate :year_must_be_lower_than_current_year

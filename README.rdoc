@@ -1,1 +1,3 @@
 https://lit-anchorage-9660.herokuapp.com/breweries
+https://travis-ci.org/JjyKs/ratebeer
+[![Build Status](https://travis-ci.org/JjyKs/ratebeer.png)](https://travis-ci.org/JjyKs/ratebeer-public)

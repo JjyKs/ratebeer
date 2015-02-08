@@ -1,0 +1,26 @@
+require 'rails_helper'
+
+describe "Beer" do
+  before :each do
+    @breweries = ["Koff", "Karjala", "Schlenkerla"]
+    year = 1896
+    @breweries.each do |brewery_name|
+      FactoryGirl.create(:brewery, name: brewery_name, year: year += 1)
+    end
+  end
+  it "with a proper name gets added" do
+    visit new_beer_path
+    fill_in('beer[name]', with: 'testikalja')
+    expect {
+      click_button('Create Beer')
+    }.to change { Beer.count }.by(1)
+  end
+
+  it "without a proper name doesnt get added" do
+    visit new_beer_path
+    expect {
+      click_button('Create Beer')
+    }.to change { Beer.count }.by(0)
+
+  end
+end

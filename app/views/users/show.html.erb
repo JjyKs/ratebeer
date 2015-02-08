@@ -28,10 +28,18 @@
   <% end %>
 </table>
 
-
+<h1>Your favorite style</h1>
+    <%= @user.favorite_style %>
 </p>
 
+<h1>Your favorite brewery</h1>
+    <%= @user.favorite_brewery %>
+</p>
+
+
+
 <% if current_user == @user %>
+    <h2>Settings</h2>
     <%= link_to 'Remove your account', @user, method: :delete, data: {confirm: 'Are you sure?'} %>
     <%= link_to 'Edit your account', edit_user_path(@user) %> |
 <% end %>

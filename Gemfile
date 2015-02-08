@@ -17,7 +17,17 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
+  gem 'rspec-rails', '~> 3.0'
+  
+  gem 'capybara'
+  gem 'launchy'
 end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'simplecov', require: false
+end
+
 
 ruby '2.1.5'
 # Use SCSS for stylesheets

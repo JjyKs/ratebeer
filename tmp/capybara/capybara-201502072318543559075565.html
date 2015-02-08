@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ratebeer</title>
+  <link data-turbolinks-track="true" href="/assets/application.css" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/application.js"></script>
+  
+</head>
+<body>
+<a href="/breweries">breweries</a>
+<a href="/beers">beers</a>
+<a href="/ratings">ratings</a>
+|||
+    <a href="/memberships/new">Join a club</a>
+    <a href="/users/1">Pekka</a>
+    <a href="/ratings/new">Rate a beer</a>
+    <a data-method="delete" href="/signout" rel="nofollow">Log out</a>
+
+<h2>Create new rating</h2>
+
+<form accept-charset="UTF-8" action="/ratings" class="new_rating" id="new_rating" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+    <select id="rating_beer_id" name="rating[beer_id]"><option value="1">Koffin  iso 3</option>
+<option value="2">Koffin  Karhu</option></select>
+    score: <input id="rating_score" name="rating[score]" type="number" />
+    <input name="commit" type="submit" value="Create Rating" />
+
+</form>
+
+
+
+
+    <p>Pekka signed in</p>
+
+
+</body>
+</html>

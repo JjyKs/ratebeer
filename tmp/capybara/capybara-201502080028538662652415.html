@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ratebeer</title>
+  <link data-turbolinks-track="true" href="/assets/application.css" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/application.js"></script>
+  
+</head>
+<body>
+<a href="/breweries">breweries</a>
+<a href="/beers">beers</a>
+<a href="/ratings">ratings</a>
+|||
+    <a href="/signin">Sign in</a>
+    <a href="/signup">Sign up</a>
+
+<h1>New beer</h1>
+
+<form accept-charset="UTF-8" action="/beers" class="new_beer" id="new_beer" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+  <div class="field">
+    <label for="beer_name">Name</label><br>
+    <input id="beer_name" name="beer[name]" type="text" />
+  </div>
+  <div class="field">
+    <select id="beer_style" name="beer[style]"><option value="Weizen">Weizen</option>
+<option value="Lager">Lager</option>
+<option value="Pale ale">Pale ale</option>
+<option value="IPA">IPA</option>
+<option value="Porter">Porter</option></select>
+  </div>
+  <div class="field">
+    <select id="beer_brewery_id" name="beer[brewery_id]"></select>
+  </div>
+  <div class="actions">
+    <input name="commit" type="submit" value="Create Beer" />
+  </div>
+</form>
+
+<a href="/beers">Back</a>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -7,6 +7,7 @@ class Beer < ActiveRecord::Base
 
 
   validates :name, length: { minimum: 1 }
+  validates :style, presence: true
 
 
   def to_s
