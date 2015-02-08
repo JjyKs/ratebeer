@@ -12,8 +12,9 @@ script:
  - bundle exec rake db:test:prepare
  - bundle exec rspec -fd spec/
  
- deploy:
-  provider: heroku
-  api_key: "488e7fd6-d4cf-495c-8933-4a2803b7e97f"
-  app: lit-anchorage-9660
-  run: "rake db:migrate"
+deploy:
+ provider: heroku
+ api_key: "488e7fd6-d4cf-495c-8933-4a2803b7e97f"
+ app: lit-anchorage-9660
+ run: "rake db:migrate"
+  
