@@ -13,6 +13,8 @@ class BeersController < ApplicationController
   # GET /beers/1
   # GET /beers/1.json
   def show
+    @rating = Rating.new
+    @rating.beer = @beer
   end
 
   # GET /beers/new
@@ -28,8 +30,10 @@ class BeersController < ApplicationController
 
 
   def set_breweries_and_styles_for_template
-    @breweries = Brewery.all
-    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+    @styles = []
+    Style.all.each do |s|
+      @styles << (s.name)
+    end
   end
 
 
@@ -37,7 +41,11 @@ class BeersController < ApplicationController
   # POST /beers.json
 
   def create
-    @beer = Beer.new(beer_params)
+
+    modifiedParams = beer_params;
+    modifiedParams["style"] = Style.where(name: beer_params["style"]).first;
+    @beer = Beer.new(modifiedParams)
+
     respond_to do |format|
       if @beer.save
         format.html {  redirect_to beers_url, notice: 'Beer was successfully created.' }
@@ -45,7 +53,7 @@ class BeersController < ApplicationController
       else
         @beer = Beer.new
         @brewery = Brewery.all
-        @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+        set_breweries_and_styles_for_template
         format.html { render :new }
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end

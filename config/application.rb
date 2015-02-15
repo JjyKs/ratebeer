@@ -23,6 +23,7 @@ module Ratebeer
     # config.i18n.default_locale = :de
     # Autoload lib/ folder including all subdirectories
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.autoload_paths += Dir["#{Rails.root}/lib"]
   end
 end
 

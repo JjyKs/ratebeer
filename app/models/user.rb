@@ -23,10 +23,10 @@ class User < ActiveRecord::Base
   def favorite_style
     return nil if Beer.first.nil? # Jos oluita ei ole, on hashi tyhjä, ja tuo .max_by sekoaa jotenkin.
     hash = {}
-    Beer.select("style").group("style").each do |r|
-      hash[r.style] = Rating.where(user_id: self.id, beer_id: Beer.where(style: r.style)).average(:score).to_s
+    Beer.select("style_id").group("style_id").each do |r|
+      hash[r.style_id] = Rating.where(user_id: self.id, beer_id: Beer.where(style: r.style_id)).average(:score).to_s
     end
-    "#{self.username}s favorite style is #{hash.max_by{|k,v| v}[0]} with an #{hash.max_by{|k,v| v}[1]} average rating" if hash.max_by{|k,v| v}[1].present?;
+    "#{self.username}s favorite style is #{Style.where(id: hash.max_by{|k,v| v}[0]).first.name} with an #{hash.max_by{|k,v| v}[1]} average rating" if hash.max_by{|k,v| v}[1].present?;
   end
 
   def favorite_brewery

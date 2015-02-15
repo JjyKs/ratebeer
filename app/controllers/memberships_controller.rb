@@ -10,6 +10,7 @@ class MembershipsController < ApplicationController
   # GET /memberships/1
   # GET /memberships/1.json
   def show
+
   end
 
   # GET /memberships/new
@@ -27,10 +28,11 @@ class MembershipsController < ApplicationController
 
   def create
     @membership = Membership.new(membership_params)
-
+    beerclubID = @membership.beerclub_id
+    @beerclub = Beerclub.find(beerclubID)
     respond_to do |format|
       if @membership.save
-        format.html { redirect_to current_user, notice: 'Membership was successfully created.' }
+        format.html { redirect_to @beerclub, notice: 'Welcome to the club '+ current_user.username }
         format.json { render :show, status: :created, location: @membership }
       else
         @beerclub = Beerclub.all
@@ -58,21 +60,23 @@ class MembershipsController < ApplicationController
   # DELETE /memberships/1
   # DELETE /memberships/1.json
   def destroy
+    beerclubID = @membership.beerclub_id
+    @beerclub = Beerclub.find(beerclubID)
     @membership.destroy
     respond_to do |format|
-      format.html { redirect_to memberships_url, notice: 'Membership was successfully destroyed.' }
+      format.html { redirect_to @beerclub, notice: 'Membership ended.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_membership
-      @membership = Membership.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_membership
+    @membership = Membership.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def membership_params
-      params.require(:membership).permit(:beerclub_id).merge(user_id: current_user.id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def membership_params
+    params.require(:membership).permit(:beerclub_id).merge(user_id: current_user.id)
+  end
 end

@@ -25,6 +25,21 @@
       </tr>
   <% end %>
 </table>
+<% if current_user %>
+    <% if @beerclub.isMember(current_user.id, @beerclub.id) %>
+        <%= form_for(@membership, method: "delete") do |f| %>
+            <%= f.hidden_field :beerclub_id %>
+            <%= f.submit value: "end the membership" %>
+        <% end %>
+    <% else %>
+        <%= form_for(@membership) do |f| %>
+            <%= f.hidden_field :beerclub_id %>
+            <%= f.submit value: "join the club" %>
+        <% end %>
+    <% end %>
+
+<% end %>
+
 
 <%= link_to 'Edit', edit_beerclub_path(@beerclub) %> |
 <%= link_to 'Back', beerclubs_path %>

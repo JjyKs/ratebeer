@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @style.name %>
+</p>
+<p>
+  <%= @style.description %>
+</p>
+
+<%= link_to 'Edit', edit_style_path(@style) %> |
+<%= link_to 'Back', styles_path %>

@@ -1,6 +1,6 @@
 class Membership < ActiveRecord::Base
-  belongs_to :user, dependent: :destroy
-  belongs_to :beerclub, dependent: :destroy
+  belongs_to :user
+  belongs_to :beerclub
 
   validate :no_duplicates
 
@@ -9,4 +9,6 @@ class Membership < ActiveRecord::Base
       errors.add(:user_id, "You are already a member of this club " )
     end
   end
+
+
 end

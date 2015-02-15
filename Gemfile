@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+gem 'httparty'
 group :development, :test do
   gem 'sqlite3'
 end
@@ -26,6 +27,7 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
+  gem 'webmock'
 end
 
 

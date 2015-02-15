@@ -34,6 +34,8 @@ describe "User" do
   it "page shows ratings" do
     sign_in(username: "Pekka", password: "Foobar1")
     brewery = FactoryGirl.create :brewery, name:"Koff"
+    FactoryGirl.create :style
+
     b1 = FactoryGirl.create :beer, name:"iso 3", brewery:brewery
     user = User.first
     visit new_rating_path
@@ -50,6 +52,7 @@ describe "User" do
   it "removing ratings remove them drom db" do
     sign_in(username: "Pekka", password: "Foobar1")
     brewery = FactoryGirl.create :brewery, name:"Koff"
+    FactoryGirl.create :style
     FactoryGirl.create :beer, name:"iso 3", brewery:brewery
     user = User.first
     visit new_rating_path
