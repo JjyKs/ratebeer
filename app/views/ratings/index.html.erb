@@ -1,18 +1,48 @@
 <h1>List of ratings</h1>
 <p> Number of ratings: <%= @ratings.count %> </p>
+<p>Recent ratings: </p>
 
-<table>
 
-
-  <tbody>
-  <ul>
-    <% @ratings.each do |rating| %>
+<tbody>
+    <ul>
+    <% Rating.recent.each do |rating| %>
         <li> <%= rating %> <%= link_to 'delete', rating_path(rating.id), method: :delete, data: { confirm: 'Are you sure?' } %> </li>
-
     <% end %>
-  </ul>
-  </tbody>
-</table>
+    </ul>
+
+
+
+</tbody>
+<p>Top breweries</p>
+<tbody>
+    <ul>
+
+      <% @top_breweries.each do |brewery| %>
+          <li> <%= brewery.name %>  </li>
+      <% end %>
+    </ul>
+</tbody>
+
+
+<p>Top styles</p>
+<tbody>
+<ul>
+  <% @top_styles.each do |style| %>
+      <li> <%= style.name %>  </li>
+  <% end %>
+</ul>
+</tbody>
+
+
+<p>Best raters: </p>
+
+<tbody>
+<ul>
+  <% User.best_raters.each do |user| %>
+      <li> <%= user.username + ' - ' + user.ratings.count.to_s %> ratings</li>
+  <% end %>
+</ul>
+</tbody>
 
 <br>
 

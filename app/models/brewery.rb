@@ -3,6 +3,9 @@ class Brewery < ActiveRecord::Base
   has_many :beers, dependent: :destroy
   has_many :ratings, through: :beers
 
+  scope :active, -> { where active:true }
+  scope :retired, -> { where active:[nil,false] }
+
 
   validates :name, length: {minimum: 1}
   validates :year, numericality: { greater_than_or_equal_to: 1024,
@@ -16,10 +19,15 @@ class Brewery < ActiveRecord::Base
     end
   end
 
+  def self.top(n)
+    sorted_by_rating_in_desc_order = Brewery.all.sort_by{ |b| -(b.average_rating_fix||0) }
+    sorted_by_rating_in_desc_order[0, n]
+  end
+
 
   def print_report
     puts name
-    puts "established at year #{year}"
+    puts "established at #{year}"
     puts "number of beers #{beers.count}"
   end
 
