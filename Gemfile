@@ -13,7 +13,7 @@ gem 'httparty'
 group :development, :test do
   gem 'sqlite3'
 end
-
+gem 'jquery-turbolinks'
 group :production do
    gem 'rails_12factor'
    gem 'pg'
